@@ -6,8 +6,11 @@ public class ArmaCorta extends Arma {
 
     private boolean automatica;
     private Policia policia;
-    public ArmaCorta(int cantidad_municiones, String estado, int calibre, String marca, int alcance_aprox) {
+
+    public ArmaCorta(int cantidad_municiones, String estado, int calibre, String marca, int alcance_aprox, boolean automatica, Policia policia) {
         super(cantidad_municiones, estado, calibre, marca, alcance_aprox);
+        this.automatica = automatica;
+        this.policia = policia;
     }
 
     public boolean isAutomatica() {
