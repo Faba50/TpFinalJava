@@ -1,4 +1,4 @@
-package policias.armas;
+package armas;
 
 import policias.Policia;
 

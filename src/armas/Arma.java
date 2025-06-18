@@ -1,4 +1,4 @@
-package policias.armas;
+package armas;
 
 public class Arma {
     private int cantidad_municiones;
