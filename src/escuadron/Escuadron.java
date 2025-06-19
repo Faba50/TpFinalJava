@@ -62,4 +62,6 @@ public class Escuadron {
               ", arma_asignada=" + arma_asignada +
               '}';
    }
+
+
 }

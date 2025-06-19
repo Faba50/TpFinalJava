@@ -64,10 +64,20 @@ public class Arma {
                 ", calibre=" + calibre +
                 ", estado='" + estado + '\'' +
                 '}';
-    }
-
-    public void en_condicion(){
 
     }
 
-}
+    public boolean enBuenEstado() {
+        if (estado.equalsIgnoreCase("EN USO") && calibre >= 9)
+
+            return true;
+
+        else {
+                System.out.println("No esta apto para su uso");
+            }
+        return false;
+
+        }
+
+
+    }
