@@ -65,4 +65,9 @@ public class Arma {
                 ", estado='" + estado + '\'' +
                 '}';
     }
+
+    public void en_condicion(){
+
+    }
+
 }
