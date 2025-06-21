@@ -1,13 +1,23 @@
 package policias;
 
+import armas.ArmaCorta;
 import escuadron.Escuadron;
 
 public class Policia {
     private String nombre;
     private String apellido;
     private int legajo;
-    private Escuadron escuadron_asignado;
-    private String arma_asignada;
+    private ArmaCorta arma_asignada;
+    private Escuadron escuadron;
+
+
+    public Escuadron getEscuadron() {
+        return escuadron;
+    }
+
+    public void setEscuadron(Escuadron escuadron) {
+        this.escuadron = escuadron;
+    }
 
     public String getNombre() {
         return nombre;
@@ -33,31 +43,22 @@ public class Policia {
         this.legajo = legajo;
     }
 
-    public Escuadron getEscuadron_asignado() {
-        return escuadron_asignado;
-    }
 
-    public void setEscuadron_asignado(Escuadron escuadron_asignado) {
-        this.escuadron_asignado = escuadron_asignado;
-    }
 
-    public String getArma_asignada() {
+
+    public ArmaCorta getArma_asignada() {
         return arma_asignada;
     }
 
-    public void setArma_asignada(String arma_asignada) {
+    public void setArma_asignada(ArmaCorta arma_asignada) {
         this.arma_asignada = arma_asignada;
     }
 
-    public Policia(String nombre, String apellido, int legajo, Escuadron escuadron_asignado, String arma_asignada) {
+    public Policia(String nombre, ArmaCorta arma_asignada, int legajo, String apellido) {
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.legajo = legajo;
-        this.escuadron_asignado = escuadron_asignado;
         this.arma_asignada = arma_asignada;
-
-
-
+        this.legajo = legajo;
+        this.apellido = apellido;
     }
 
     @Override
@@ -66,8 +67,13 @@ public class Policia {
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", legajo=" + legajo +
-                ", escuadron_asignado=" + escuadron_asignado +
-                ", arma_asignada='" + arma_asignada + '\'' +
+                ", arma_asignada=" + (arma_asignada !=null ? arma_asignada.getMarca(): "Sin arma")+
                 '}';
     }
 }
+
+
+
+
+
+

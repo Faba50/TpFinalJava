@@ -6,7 +6,7 @@ public class Arma {
     private String marca;
     private int calibre;
     private String estado;
-
+    private String oficial_asignado;
     public int getCantidad_municiones() {
         return cantidad_municiones;
     }
@@ -67,17 +67,7 @@ public class Arma {
 
     }
 
-    public boolean enBuenEstado() {
-        if (estado.equalsIgnoreCase("EN USO") && calibre >= 9)
 
-            return true;
-
-        else {
-                System.out.println("No esta apto para su uso");
-            }
-        return false;
-
-        }
 
 
     }

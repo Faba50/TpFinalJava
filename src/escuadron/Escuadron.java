@@ -14,11 +14,12 @@ public class Escuadron {
    private List<Policia>  escuadron_policia = new ArrayList<>();
    private List <Arma> arma_asignada = new ArrayList<>();
 
-   public Escuadron(String comisaria_perteneciente, String nombre_escuadron, List<Policia> escuadron_policia, List<Arma> arma_asignada) {
+   public Escuadron(String comisaria_perteneciente, String nombre_escuadron) {
       this.comisaria_perteneciente = comisaria_perteneciente;
       this.nombre_escuadron = nombre_escuadron;
-      this.escuadron_policia = escuadron_policia;
-      this.arma_asignada = arma_asignada;
+      this.escuadron_policia = new ArrayList<>();
+      this.arma_asignada = new ArrayList<>();
+
    }
 
    public String getNombre_escuadron() {
@@ -52,6 +53,27 @@ public class Escuadron {
    public void setArma_asignada(List<Arma> arma_asignada) {
       this.arma_asignada = arma_asignada;
    }
+
+   public void agregar_policia(Policia p){
+      if(p.getEscuadron() !=null){
+         System.out.println("Este oficial ya pertenece a un escuadron.");
+      }
+      else{
+         escuadron_policia.add(p);
+         p.setEscuadron(this);
+         System.out.println(p + "Ahora pertenece al escuadron " + this.nombre_escuadron );
+      }
+   }
+   public void agregar_arma(Arma a){
+      arma_asignada.add(a);
+   }
+
+   public void mostrar_miembros(){
+      for(Policia e : escuadron_policia)
+         System.out.println("los miembros del escuadron son: " + e);
+   }
+
+
 
    @Override
    public String toString() {
