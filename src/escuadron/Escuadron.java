@@ -70,7 +70,7 @@ public class Escuadron {
 
    public void mostrar_miembros(){
       for(Policia e : escuadron_policia)
-         System.out.println("los miembros del escuadron son: " + e);
+         System.out.println("los miembros del escuadron " + this.nombre_escuadron + e);
    }
 
 

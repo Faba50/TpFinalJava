@@ -30,6 +30,10 @@ public class Main {
         ((ArmaCorta) arma2).disparo_corta_distancia(arma2);
 
         //ahora vamos a ver toda la info de los escuadrones, miembros y sus armas
+        cuadrilla1.agregar_policia(poli2);
+        cuadrilla1.mostrar_miembros();
 
     }
+
+
 }

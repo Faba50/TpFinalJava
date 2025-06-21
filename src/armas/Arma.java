@@ -1,6 +1,6 @@
 package armas;
 
-public class Arma {
+public abstract class Arma {
     private int cantidad_municiones;
     private int alcance_aprox;
     private String marca;
@@ -54,6 +54,23 @@ public class Arma {
         this.marca = marca;
         this.alcance_aprox = alcance_aprox;
     }
+
+    public boolean en_buen_estado(Arma a){
+        if (a.getEstado().equalsIgnoreCase("EN USO")){
+            return true;
+        }
+        else if(a.getEstado().equalsIgnoreCase("EN MANTENIMIENTO"))
+            System.out.println("No esta apta para su uso puesto que se encuentra en mantenimiento");
+
+        else if (a.getEstado().equalsIgnoreCase("NUEVA")) {
+            System.out.println("El estado actual del arma es nuevo, se encuentra apta para su uso");
+        }
+        return false;
+
+    }
+
+
+    public abstract boolean en_buen_estado();
 
     @Override
     public String toString() {

@@ -1,7 +1,5 @@
 package armas;
 
-import policias.Policia;
-
 public class ArmaCorta extends Arma {
 
     private boolean automatica;
@@ -21,11 +19,20 @@ public class ArmaCorta extends Arma {
         this.automatica = automatica;
     }
 
-    public boolean en_buen_estado(Arma a){
-        if (a.getEstado().equalsIgnoreCase("EN USO") && a.getCalibre()>=9){
+
+
+    //comparamos el string con el metodo equals ignorando las mayusculas
+    @Override
+    public boolean en_buen_estado(){
+        if (this.getEstado().equalsIgnoreCase("EN USO") && this.getCalibre()>=9){
             return true;
         }
-        System.out.println("No esta apta para su uso");
+        else if(this.getEstado().equalsIgnoreCase("EN MANTENIMIENTO"))
+        System.out.println("No esta apta para su uso puesto que se encuentra en mantenimiento");
+
+        else if (this.getEstado().equalsIgnoreCase("NUEVA")) {
+            System.out.println("El estado actual del arma es nuevo, se encuentra apta para su uso");
+        }
         return false;
     }
 
