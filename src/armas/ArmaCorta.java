@@ -36,8 +36,8 @@ public class ArmaCorta extends Arma {
         return false;
     }
 
-    public void disparo_corta_distancia(Arma a){
-        if(a.getAlcance_aprox() <=200){
+    public void disparo_corta_distancia(){
+        if(this.getAlcance_aprox() <=200){
             System.out.println("No se la puede disparar a mas de 200 metros. ");
         }
         else{

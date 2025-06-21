@@ -8,8 +8,8 @@ public class Main {
 
 
         Escuadron cuadrilla1 = new Escuadron("lomas de zamora", "alcon");
-        Arma arma1 = new ArmaCorta(19,"en uso", 9, "bereta", 250, true);
-        Policia poli1 = new Policia("Javier", (ArmaCorta) arma1, 430940, "Lopez");
+        ArmaCorta arma1 = new ArmaCorta(19,"en uso", 9, "bereta", 250, true);
+        Policia poli1 = new Policia("Javier", arma1, 430940, "Lopez");
 
         cuadrilla1.agregar_policia(poli1);
         //instanciamos todos los objetos, ahora veremos si el metodo de agregar al escuadron permite que un policia pertenezca a mas de uno
@@ -20,14 +20,14 @@ public class Main {
 
         //ahora vamos a probar los metodos de condicion del arma con una buena y una mala
 
-        Arma arma2 = new ArmaCorta(20,"desgastada", 1, "baltimore", 90, false);
-        Policia poli2 = new Policia("Fabian", (ArmaCorta) arma2, 3821398, "Bustos");
-        ((ArmaCorta) arma2).en_buen_estado(arma2);
+        ArmaCorta arma2 = new ArmaCorta(20,"desgastada", 1, "baltimore", 90, false);
+        Policia poli2 = new Policia("Fabian", arma2, 3821398, "Bustos");
+        arma2.en_buen_estado();
         //como es debido nos dice que no esta apta para su uso
 
         //ahora vamos a probar si se las puede disparar a mas de 200 metros
-        ((ArmaCorta) arma1).disparo_corta_distancia(arma1);
-        ((ArmaCorta) arma2).disparo_corta_distancia(arma2);
+        arma1.disparo_corta_distancia();
+        arma2.disparo_corta_distancia();
 
         //ahora vamos a ver toda la info de los escuadrones, miembros y sus armas
         cuadrilla1.agregar_policia(poli2);
